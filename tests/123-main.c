@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "../binary_trees.h"
+#include "binary_trees.h"
 
 /**
  * main - Entry point
@@ -14,6 +14,7 @@ int main(void)
         79, 47, 68, 87, 84, 91, 21, 32, 34, 2,
         20, 22, 98, 1, 62, 95
     };
+
     size_t n = sizeof(array) / sizeof(array[0]);
 
     tree = array_to_avl(array, n);
@@ -33,7 +34,15 @@ int main(void)
     printf("Removed 32...\n");
     binary_tree_print(tree);
 
-    tree = avl_remove(tree, 34);
+    tree = avl_remove(tree, 62);
+    printf("Removed 62...\n");
+    binary_tree_print(tree);
+
+    tree = avl_remove(tree, 68);
+    printf("Removed 68...\n");
+    binary_tree_print(tree);
+
+    tree = avl_remove(tree, 84);
     printf("Removed 34...\n");
     binary_tree_print(tree);
 
